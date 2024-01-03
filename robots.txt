@@ -1,0 +1,4 @@
+User-agent: Yandex
+Disallow: 
+Host: pchelka.foxproject.repl.co
+Sitemap: http://pchelka.foxproject.repl.co/sitemap.xml

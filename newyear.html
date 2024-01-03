@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Снег</title>
+    <style>
+        body {
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        .snowflake {
+            position: absolute;
+            top: -10px;
+            width: 10px;
+            height: 10px;
+            background: url('snow.png');
+            background-size: cover;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="snowflakes"></div>
+    <script>
+        // Создаем снежинки и добавляем их на страницу
+        function createSnowflakes() {
+            const snowflakes = document.getElementById("snowflakes");
+            const numFlakes = 50; // Количество снежинок
+
+            for (let i = 0; i < numFlakes; i++) {
+                const snowflake = document.createElement("div");
+                snowflake.classList.add("snowflake");
+                snowflake.style.left = Math.random() * 100 + "vw";
+                snowflake.style.animationDuration = (Math.random() * 3 + 2) + "s";
+
+                snowflakes.appendChild(snowflake);
+            }
+        }
+
+        // Запускаем создание снежинок при загрузке страницы
+        window.addEventListener("load", createSnowflakes);
+    </script>
+</body>
+</html>
